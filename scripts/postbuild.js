@@ -3,6 +3,9 @@ const glob = require('glob');
 const path = require('path');
 const copy = require('copyfiles');
 const { gzip } = require('node-gzip');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
 /* eslint import/no-extraneous-dependencies: 0 */
 /* eslint no-console: 0 */
