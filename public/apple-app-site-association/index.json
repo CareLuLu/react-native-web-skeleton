@@ -1,0 +1,9 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [{
+      "appID": "LKWJEF.io.myapp.example",
+      "paths": ["/*"]
+    }]
+  }
+}
