@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "orientation": "portrait",
+    "name": "BaseApp",
+    "slug": "BaseApp",
+    "version": "0.1.0",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "splash": {
+    "backgroundColor": "#FFFFFF"
+  },
+  "android": {
+    "intentFilters": [
+      {
+        "action": "VIEW",
+        "autoVerify": true,
+        "data": [
+          {
+            "scheme": "https",
+            "host": "*.baseapp.com",
+            "pathPrefix": "/"
+          }
+        ],
+        "category": [
+          "BROWSABLE",
+          "DEFAULT"
+        ]
+      }
+    ],
+    "permissions": [
+      "CAMERA",
+      "READ_INTERNAL_STORAGE",
+      "READ_EXTERNAL_STORAGE",
+      "WRITE_EXTERNAL_STORAGE"
+    ]
+  },
+  "ios": {
+    "usesIcloudStorage": true
+  }
+}

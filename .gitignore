@@ -1,0 +1,44 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# expo
+.expo/
+
+# build
+build
+build.zip
+server/loadable-stats.json
+server/test.html
+server/index.html
+
+# dependencies
+/node_modules
+
+# report
+dist
+
+# misc
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# DS_Store
+.DS_Store
+
+# IDE specific directories
+.vscode
+
+# IDE Configurations
+jsconfig.json
+tsconfig.json
+
+# Notes
+notes.txt

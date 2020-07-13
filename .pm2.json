@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "script": "index.js",
+    "instances": "max",
+    "exec_mode": "cluster",
+    "wait_ready": true,
+    "listen_timeout": 300000,
+    "kill_timeout": 30000,
+    "autorestart": true,
+    "out_file": "/dev/null",
+    "error_file": "/dev/null",
+    "max_memory_restart": "1G",
+    "cron_restart": "1 0 * * *"
+  }],
+}
