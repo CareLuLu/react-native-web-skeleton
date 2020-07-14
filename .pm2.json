@@ -1,15 +1,21 @@
 {
   "apps": [{
-    "script": "index.js",
+    "script": "server/bootstrap.js",
     "instances": "max",
     "exec_mode": "cluster",
     "wait_ready": true,
     "listen_timeout": 300000,
     "kill_timeout": 30000,
     "autorestart": true,
+    "max_memory_restart": "1G",
+    "cron_restart": "1 0 * * *",
+    "node_args": "-r esx/optimize",
     "out_file": "/dev/null",
     "error_file": "/dev/null",
-    "max_memory_restart": "1G",
-    "cron_restart": "1 0 * * *"
-  }],
+    "env": {
+      "NODE_ENV": "production",
+      "BABEL_ENV": "production",
+      "SERVER": "1"
+    },
+  }]
 }
