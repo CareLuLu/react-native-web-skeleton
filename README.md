@@ -1,5 +1,5 @@
-[![Node Version](https://img.shields.io/badge/nodejs-14.5.0-blue.svg)](https://nodejs.org)
-[![Build Status](https://img.shields.io/jenkins/build/https/jenkins.carelulu.com/job/react-native-web-skeleton/job/master.svg)](https://jenkins.carelulu.com/blue/organizations/jenkins/react-native-web-skeleton/activity)
+[![Node Version](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.carelulu.com%2Fapi%2Fwebhook%2Fshields%3Ftype%3Dnodejs%26job%3Dreact-native-web-skeleton%252Fmaster)](https://nodejs.org)
+[![Build Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.carelulu.com%2Fapi%2Fwebhook%2Fshields%3Ftype%3Dbuild%26job%3Dreact-native-web-skeleton%252Fmaster)](https://jenkins.carelulu.com/blue/organizations/jenkins/react-native-web-skeleton/activity)
 [![Dependencies](https://img.shields.io/badge/dependencies-renovate-brightgreen.svg)](https://github.com/CareLuLu/react-native-web-skeleton/issues/1)
 [![Codacy Badge](https://img.shields.io/codacy/grade/275359a12b3f4273a29dc02c52c4aa63/master)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CareLuLu/react-native-web-skeleton&amp;utm_campaign=Badge_Grade)
 
@@ -38,8 +38,8 @@ First, go the project's root, install the appropriate NVM version and install pr
 
 ```sh
 nvm install 10.0.0
-git clone git@github.com:CareLuLu/v3-app.git
-cd v3-app
+git clone git@github.com:CareLuLu/react-native-web-skeleton.git
+cd react-native-web-skeleton
 ```
 
 ### Environment Variables

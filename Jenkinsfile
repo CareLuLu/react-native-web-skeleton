@@ -66,7 +66,7 @@ pipeline {
           steps {
             script {
               withCredentials([string(credentialsId: 'EC2_USER', variable: 'EC2_USER')]) {
-                DEPLOYMENT_HOST_1 = sh(returnStdout: true, script: "set +x && aws ec2 describe-instances --filters \"Name=tag:Name,Values=dev\" --query \"Reservations[*].Instances[*].PublicIpAddress\" --output=text && set -x").trim()
+                DEPLOYMENT_HOST_1 = sh(returnStdout: true, script: "set +x && aws ec2 describe-instances --filters \"Name=tag:Name,Values=rnw-skeleton\" --query \"Reservations[*].Instances[*].PublicIpAddress\" --output=text && set -x").trim()
                 DEPLOYMENT_VERSION_1 = sh(returnStdout: true, script: "set +x && ssh -oStrictHostKeyChecking=no ${EC2_USER}@${DEPLOYMENT_HOST_1} \"cat react-native-web-skeleton/.nvmrc\" && set -x").trim()
                 DEPLOYMENT_COMMAND_1 = DEPLOYMENT_VERSION_1 == env.NODEJS_VERSION ? 'startOrRestart .pm2.json' : 'update'
                 sh "set +x && scp -oStrictHostKeyChecking=no server/loadable-stats.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/server/loadable-stats.json && set -x"
