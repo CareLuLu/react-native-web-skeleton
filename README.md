@@ -1,5 +1,7 @@
 [![Node Version](https://img.shields.io/badge/nodejs-14.5.0-blue.svg)](https://nodejs.org)
+[![Build Status](https://img.shields.io/jenkins/build/https/jenkins.carelulu.com/job/react-native-web-skeleton/job/master.svg)](https://jenkins.carelulu.com/blue/organizations/jenkins/react-native-web-skeleton/activity)
 [![Dependencies](https://img.shields.io/badge/dependencies-renovate-brightgreen.svg)](https://github.com/CareLuLu/react-native-web-skeleton/issues/1)
+[![Codacy Badge](https://img.shields.io/codacy/grade/275359a12b3f4273a29dc02c52c4aa63/master)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CareLuLu/react-native-web-skeleton&amp;utm_campaign=Badge_Grade)
 
 This is a multiplatform production ready app coded for Android, iOS, Mobile Web Responsiveness, Web Client-side Rendering (CSR), Server-side Rendering (SSR) and Google Accelerated Mobile Pages (AMP).
 
