@@ -32,7 +32,7 @@ pipeline {
     stage('Linter') {
       steps {
         script {
-          sh "git diff --name-only --diff-filter=b \$(git merge-base HEAD dev) | grep -e \"\\.js\$\" | xargs yarn eslint -c ./.eslintrc"
+          sh "git diff --name-only --diff-filter=b \$(git merge-base HEAD master) | grep -e \"\\.js\$\" | xargs yarn eslint -c ./.eslintrc"
         }
       }
     }
