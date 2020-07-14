@@ -66,20 +66,16 @@ pipeline {
           steps {
             script {
               withCredentials([string(credentialsId: 'EC2_USER', variable: 'EC2_USER')]) {
-                sh "echo Uploading build..."
-                sh "set +x"
-                DEPLOYMENT_HOST_1 = sh(returnStdout: true, script: "aws ec2 describe-instances --filters \"Name=tag:Name,Values=dev\" --query \"Reservations[*].Instances[*].PublicIpAddress\" --output=text").trim()
-                DEPLOYMENT_VERSION_1 = sh(returnStdout: true, script: "ssh -oStrictHostKeyChecking=no ${EC2_USER}@${DEPLOYMENT_HOST_1} \"cat react-native-web-skeleton/.nvmrc\"").trim()
+                DEPLOYMENT_HOST_1 = sh(returnStdout: true, script: "set +x && aws ec2 describe-instances --filters \"Name=tag:Name,Values=dev\" --query \"Reservations[*].Instances[*].PublicIpAddress\" --output=text && set -x").trim()
+                DEPLOYMENT_VERSION_1 = sh(returnStdout: true, script: "set +x && ssh -oStrictHostKeyChecking=no ${EC2_USER}@${DEPLOYMENT_HOST_1} \"cat react-native-web-skeleton/.nvmrc\" && set -x").trim()
                 DEPLOYMENT_COMMAND_1 = DEPLOYMENT_VERSION_1 == env.NODEJS_VERSION ? 'startOrRestart .pm2.json' : 'update'
-                sh "scp -oStrictHostKeyChecking=no server/loadable-stats.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/server/loadable-stats.json"
-                sh "scp -oStrictHostKeyChecking=no build/manifest.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/manifest.json.gz"
-                sh "scp -oStrictHostKeyChecking=no build/asset-manifest.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/asset-manifest.json.gz"
-                sh "scp -oStrictHostKeyChecking=no build/.well-known/assetlinks.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/.well-known/assetlinks.json"
-                sh "scp -oStrictHostKeyChecking=no build/apple-app-site-association/index.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/apple-app-site-association/index.json"
-                sh "scp -oStrictHostKeyChecking=no build/index.html ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/index.html"
-                sh "ssh -oStrictHostKeyChecking=no ${EC2_USER}@${DEPLOYMENT_HOST_1} \"sudo yum update -y && cd react-native-web-skeleton && git reset --hard HEAD && git pull && git checkout master && nvm install ${env.NODEJS_VERSION} && nvm alias default ${env.NODEJS_VERSION} && nvm use default && yarn install && yarn run pm2 ${DEPLOYMENT_COMMAND_1}\""
-                sh "set -x"
-                sh "echo Build successfully uploaded."
+                sh "set +x && scp -oStrictHostKeyChecking=no server/loadable-stats.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/server/loadable-stats.json && set -x"
+                sh "set +x && scp -oStrictHostKeyChecking=no build/manifest.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/manifest.json.gz && set -x"
+                sh "set +x && scp -oStrictHostKeyChecking=no build/asset-manifest.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/asset-manifest.json.gz && set -x"
+                sh "set +x && scp -oStrictHostKeyChecking=no build/.well-known/assetlinks.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/.well-known/assetlinks.json && set -x"
+                sh "set +x && scp -oStrictHostKeyChecking=no build/apple-app-site-association/index.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/apple-app-site-association/index.json && set -x"
+                sh "set +x && scp -oStrictHostKeyChecking=no build/index.html ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/index.html && set -x"
+                sh "set +x && ssh -oStrictHostKeyChecking=no ${EC2_USER}@${DEPLOYMENT_HOST_1} \"sudo yum update -y && cd react-native-web-skeleton && git reset --hard HEAD && git pull && git checkout master && nvm install ${env.NODEJS_VERSION} && nvm alias default ${env.NODEJS_VERSION} && nvm use default && yarn install && yarn run pm2 ${DEPLOYMENT_COMMAND_1}\" && set -x"
               }
             }
           }
