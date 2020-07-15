@@ -8,6 +8,7 @@ import fs from 'fs';
 import uglify from 'uglifycss';
 import { AppRegistry } from 'react-native';
 import stats from '../loadable-stats.json';
+import getUrl from '../../src/utils/getUrl';
 import routes from '../../src/screens/routes';
 import { createClient, INITIAL_STATE } from '../../src/utils/apollo';
 import App from '../App';
@@ -24,7 +25,7 @@ const reScriptSrc = /src="([^"]+)"/g;
 const reSchemaOrg = /<script [^>]*type="application\/ld\+json">(.*?)<\/script>/g;
 const reAmpScripts = /<script async[^>]*>(.*?)<\/script>/g;
 
-const publicPath = process.env.REACT_APP_CDN || '/';
+const publicPath = process.env.PUBLIC_URL || '/';
 
 const notFound = /\/404\/?$/;
 
@@ -126,10 +127,10 @@ const renderer = () => async (ctx) => {
   } catch (err) {
     if (err.networkError || !get(err, 'graphQLErrors[0].code')) {
       ctx.status = 500;
-      return ctx.redirect('/500');
+      return ctx.redirect(getUrl('/500'));
     }
     ctx.status = 404;
-    return ctx.redirect('/404');
+    return ctx.redirect(getUrl('/404'));
   }
 
   let body = await render(jsx);

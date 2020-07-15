@@ -7,6 +7,7 @@ import { isSSR } from 'react-native-web-ui-components/utils';
 import generatePath from '../utils/generatePath';
 import getLocationUrl from '../utils/getLocationUrl';
 import getItemHash from '../utils/getItemHash';
+import getUrl from '../utils/getUrl';
 import Splash from '../components/Splash';
 
 /* eslint react/prop-types: 0 */
@@ -73,7 +74,7 @@ if (!SSR_MODE) {
       } = props;
 
       if (user.mock && error && error === 'Network error. Please check your internet connection.') {
-        return <RedirectRN replace to="/network-error" />;
+        return <RedirectRN replace to={getUrl('/network-error')} />;
       }
 
       if (user.mock) {
@@ -110,7 +111,7 @@ if (!SSR_MODE) {
       } = props;
 
       if (user.mock && error && error === 'Network error. Please check your internet connection.') {
-        return <RedirectRN replace to="/network-error" />;
+        return <RedirectRN replace to={getUrl('/network-error')} />;
       }
 
       if (user.mock) {
@@ -119,7 +120,7 @@ if (!SSR_MODE) {
       }
 
       if (!profile || (route.permission && !profile[route.permission])) {
-        return <RedirectRN replace to="/404" />;
+        return <RedirectRN replace to={getUrl('/404')} />;
       }
 
       return <Component {...props} />;
@@ -135,46 +136,46 @@ const tree = {
     {
       key: 'Home',
       exact: true,
-      path: '/',
+      path: getUrl('/'),
       component: open(Home),
       amp: true,
     },
     {
       key: 'About',
       exact: true,
-      path: '/about',
+      path: getUrl('/about'),
       component: open(About),
       amp: true,
     },
     {
       key: 'Login',
       exact: true,
-      path: '/login',
+      path: getUrl('/login'),
       component: open(Login),
     },
     {
       key: 'Signup',
       exact: true,
-      path: '/signup',
+      path: getUrl('/signup'),
       component: open(Signup),
     },
     {
       key: 'Logout',
       exact: true,
-      path: '/logout',
+      path: getUrl('/logout'),
       component: open(Logout),
     },
     {
       key: 'NetworkError',
       exact: true,
-      path: '/network-error',
+      path: getUrl('/network-error'),
       component: open(NetworkError),
       amp: true,
     },
     {
       key: 'UnknownError',
       exact: true,
-      path: '/500',
+      path: getUrl('/500'),
       component: open(UnknownError),
       amp: true,
     },

@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 import { Text, MainContainer } from 'react-native-web-ui-components';
 import { SIGNUP_DISCLAIMER } from '../../config';
 import useLoginRedirect from '../../utils/useLoginRedirect';
+import getUrl from '../../utils/getUrl';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import LimitedContainer from '../../components/LimitedContainer';
@@ -23,7 +24,7 @@ const Signup = (props) => {
   };
 
   if (!allowed.current && user.role !== 'VISITOR') {
-    return <Redirect replace to="/" />;
+    return <Redirect replace to={getUrl('/')} />;
   }
 
   return (
