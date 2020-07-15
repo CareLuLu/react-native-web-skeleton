@@ -13,7 +13,7 @@ if (prefix && prefix[prefix.length - 1] === '/') {
 if (Platform.OS !== 'web') {
   prefix = '';
 }
-console.log(prefix);
+
 const getUrl = pathname => `${prefix}${pathname}`;
 
 export default getUrl;
