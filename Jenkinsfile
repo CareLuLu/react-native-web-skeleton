@@ -70,6 +70,7 @@ pipeline {
                 DEPLOYMENT_VERSION_1 = sh(returnStdout: true, script: "set +x && ssh -oStrictHostKeyChecking=no ${EC2_USER}@${DEPLOYMENT_HOST_1} \"cat react-native-web-skeleton/.nvmrc\" && set -x").trim()
                 DEPLOYMENT_COMMAND_1 = DEPLOYMENT_VERSION_1 == env.NODEJS_VERSION ? 'startOrRestart .pm2.json' : 'update'
                 sh "set +x && scp -oStrictHostKeyChecking=no server/loadable-stats.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/server/loadable-stats.json && set -x"
+                sh "set +x && scp -oStrictHostKeyChecking=no server/index.html ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/server/index.html && set -x"
                 sh "set +x && scp -oStrictHostKeyChecking=no build/manifest.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/manifest.json.gz && set -x"
                 sh "set +x && scp -oStrictHostKeyChecking=no build/asset-manifest.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/asset-manifest.json.gz && set -x"
                 sh "set +x && scp -oStrictHostKeyChecking=no build/.well-known/assetlinks.json ${EC2_USER}@${DEPLOYMENT_HOST_1}:~/react-native-web-skeleton/build/.well-known/assetlinks.json && set -x"
