@@ -139,6 +139,7 @@ const Header = ({ user, openLeft }) => {
               display: flex;
               min-height: 32px;
               position: relative;
+              width: max-content;
               max-width: max-content;
             }
             [data-class~="Header__row"] [placeholder] {

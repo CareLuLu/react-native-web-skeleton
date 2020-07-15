@@ -1,30 +1,28 @@
-import getUrl from '../getUrl';
-
 const getMenu = (user) => {
   const menu = [
     {
       label: 'Home',
-      url: getUrl('/'),
+      url: '/',
     },
     {
       label: 'About',
-      url: getUrl('/about'),
+      url: '/about',
     },
   ];
   if (user) {
     if (user.role === 'VISITOR') {
       menu.push({
         label: 'Log In',
-        url: getUrl('/login'),
+        url: '/login',
       });
       menu.push({
         label: 'Sign Up',
-        url: getUrl('/signup'),
+        url: '/signup',
       });
     } else {
       menu.push({
         label: 'Logout',
-        url: getUrl('/logout'),
+        url: '/logout',
       });
     }
   }
