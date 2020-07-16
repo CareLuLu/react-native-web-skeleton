@@ -8,6 +8,7 @@ import {
   REACT_APP_GOOGLE_ANALYTICS_ID,
   REACT_APP_FOOTER_DISCLAIMER,
   REACT_APP_SIGNUP_DISCLAIMER,
+  REACT_APP_COOKIE_DOMAIN,
   REACT_APP_INITIAL_PAGE,
 } from 'react-native-dotenv';
 
@@ -58,6 +59,11 @@ export const SIGNUP_DISCLAIMER = (
   process.env.REACT_APP_SIGNUP_DISCLAIMER
   || REACT_APP_SIGNUP_DISCLAIMER
   || 'By signing up, you agree to create an account at [BaseApp](https://www.baseapp.com).'
+);
+export const COOKIE_DOMAIN = (
+  process.env.REACT_APP_COOKIE_DOMAIN
+  || REACT_APP_COOKIE_DOMAIN
+  || ''
 );
 
 // For testing. If set, the app will start at the page below.
