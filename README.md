@@ -6,7 +6,7 @@
 This is a multiplatform production ready app coded for Android, iOS, Mobile Web Responsiveness, Web Client-side Rendering (CSR), Server-side Rendering (SSR) and Google Accelerated Mobile Pages (AMP).
 
 - See this project in production at https://www.carelulu.com.
-- See this project example at https://wwww.carelulu.com/react-native-web-example.
+- See this project example at https://www.carelulu.com/react-native-web-example.
 
 ## Table of Contents
 
