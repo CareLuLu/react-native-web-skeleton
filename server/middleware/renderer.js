@@ -228,7 +228,7 @@ const renderer = () => async (ctx) => {
       const scriptPreloads = scriptUrls.map(scriptUrl => `<link rel="preload" as="script" href="${scriptUrl.replace(reScriptSrc, '$1')}">`).join('');
       html = html.replace('<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">', `<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">${scriptPreloads}`);
     }
-    html = html.replace('<div id="root">', `${extraScripts}<div id="root">`);
+    html = html.replace('</body>', `${extraScripts}</body>`);
   }
 
   // Push all preloads to the very top.
@@ -242,7 +242,7 @@ const renderer = () => async (ctx) => {
   const markups = html.match(reSchemaOrg);
   if (markups && markups.length) {
     html = html.replace(reSchemaOrg, '');
-    html = html.replace('</body>', markups.join(''));
+    html = html.replace('</body>', `${markups.join('')}</body>`);
   }
 
   // For non-AMP pages, we display the content right away.
