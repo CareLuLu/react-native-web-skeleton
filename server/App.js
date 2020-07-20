@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 import { UIProvider, Router, Switch } from 'react-native-web-ui-components';
 import ClientContext from '../src/utils/apollo/Context';
 import EntryScreen from '../src/screens';

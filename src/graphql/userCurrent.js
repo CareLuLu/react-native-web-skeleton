@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import USER_CURRENT_FIELDS from './userCurrentFields';
 
 export default gql`

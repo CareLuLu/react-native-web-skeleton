@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import ReactDOMServer from 'react-dom/server';
 import { ChunkExtractor } from '@loadable/server';
-import { getDataFromTree } from '@apollo/react-ssr';
+import { renderToStringWithData } from '@apollo/client/react/ssr';
 import { has, get } from 'lodash';
 import path from 'path';
 import fs from 'fs';
@@ -75,20 +75,6 @@ const loadCSS = '<script>!function(e){"use strict";var t=function(t,n,r,o){var i
 
 AppRegistry.registerComponent('App', () => App);
 
-const render = reactComponent => new Promise((resolve, reject) => {
-  const body = [];
-  const bodyStream = ReactDOMServer.renderToNodeStream(reactComponent);
-  bodyStream.on('data', (chunk) => {
-    body.push(chunk.toString());
-  });
-  bodyStream.on('error', (err) => {
-    reject(err);
-  });
-  bodyStream.on('end', () => {
-    resolve(body.join(''));
-  });
-});
-
 const renderer = () => async (ctx) => {
   let url = ctx.req.url.replace(re, '');
   url = url.substring(url.indexOf('/'));
@@ -122,8 +108,9 @@ const renderer = () => async (ctx) => {
 
   const jsx = chunkExtractor.collectChunks(element);
 
+  let body;
   try {
-    await getDataFromTree(jsx);
+    body = await renderToStringWithData(jsx);
   } catch (err) {
     if (err.networkError || !get(err, 'graphQLErrors[0].code')) {
       ctx.status = 500;
@@ -133,7 +120,6 @@ const renderer = () => async (ctx) => {
     return ctx.redirect(getUrl('/404'));
   }
 
-  let body = await render(jsx);
   const initialState = client.extract();
 
   if (has(initialState, 'cacheControl')) {

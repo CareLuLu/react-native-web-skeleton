@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 import { UIProvider, Router, Switch } from 'react-native-web-ui-components';
 import createClient from './utils/apollo/createClient';
 import ClientContext from './utils/apollo/Context';

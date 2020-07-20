@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Redirect, withRouter } from 'react-router';
+import { Redirect, useLocation } from 'react-router';
 import { renderRoutes, matchRoutes } from 'react-router-config';
 import { isSSR } from 'react-native-web-ui-components/utils';
 import queryString from 'query-string';
@@ -43,7 +42,7 @@ const utmKeys = [
 
 const allKeys = ['jwt'].concat(utmKeys);
 
-const getUrlParams = ({ location }) => {
+const getUrlParams = (location) => {
   const matches = matchRoutes(routes, location.pathname);
   const current = last(matches).route;
   const params = {};
@@ -66,12 +65,12 @@ const getUrlParams = ({ location }) => {
 };
 
 const EntryScreen = (props) => {
-  const { location } = props;
+  const location = useLocation();
 
   const params = {
     ...props,
     routes,
-    urlParams: getUrlParams(props),
+    urlParams: getUrlParams(location),
     hashParams: queryString.parse(location.hash),
     queryParams: queryString.parse(location.search),
   };
@@ -116,8 +115,4 @@ const EntryScreen = (props) => {
   );
 };
 
-EntryScreen.propTypes = {
-  location: PropTypes.shape().isRequired,
-};
-
-export default withRouter(EntryScreen);
+export default EntryScreen;

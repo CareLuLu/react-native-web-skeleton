@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
 import { get, noop, cloneDeep } from 'lodash';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { renderRoutes } from 'react-router-config';
 import { Container, Sidebar } from 'react-native-web-ui-components';
 import { isSSR } from 'react-native-web-ui-components/utils';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
-import gql from 'graphql-tag';
+import { useLocation } from 'react-router';
+import { gql } from '@apollo/client';
 import FormRN from 'react-native-web-jsonschema-form';
 import { Center, Button } from 'react-native-web-ui-components';
 import { useAmp } from 'react-native-web-ui-components/Amp';
@@ -69,7 +69,6 @@ const mutate = ({ client, mutation }) => client.mutate({
 
 const Form = ({
   alt,
-  location,
   action,
   controller,
   onClose,
@@ -80,6 +79,8 @@ const Form = ({
   formData,
   ...props
 }) => {
+  const location = useLocation();
+
   const amp = useAmp();
   const client = useClient();
   const [loading, setLoading] = useSafeSetState(false);
@@ -181,4 +182,4 @@ Form.defaultProps = {
   alt: null,
 };
 
-export default withRouter(Form);
+export default Form;
