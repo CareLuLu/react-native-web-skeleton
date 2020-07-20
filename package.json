@@ -5,7 +5,7 @@
   "author": "Gabriel Marques <gabriel@carelulu.com>",
   "license": "MIT",
   "devDependencies": {
-    "@apollo/react-ssr": "3.1.5",
+    "@apollo/react-ssr": "4.0.0",
     "@babel/core": "7.10.5",
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-proposal-decorators": "7.10.5",
@@ -58,7 +58,7 @@
     "lint": "eslint ./src -c ./.eslintrc --ext .js"
   },
   "dependencies": {
-    "@apollo/react-hooks": "3.1.5",
+    "@apollo/react-hooks": "4.0.0",
     "@loadable/component": "5.13.1",
     "apollo-cache-inmemory": "1.6.6",
     "apollo-client": "2.6.10",
