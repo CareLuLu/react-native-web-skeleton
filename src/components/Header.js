@@ -6,7 +6,6 @@ import {
   Row,
   View,
   Column,
-  NavLink,
   Button,
   Container,
 } from 'react-native-web-ui-components';
@@ -17,6 +16,7 @@ import { URL, API_URL } from '../config';
 import getMenu from '../utils/getMenu';
 import getUrl from '../utils/getUrl';
 import Mustache from './Mustache';
+import NavLink from './NavLink';
 
 const styles = StyleSheet.create({
   row: {

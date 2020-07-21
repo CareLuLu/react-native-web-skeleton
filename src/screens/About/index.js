@@ -126,7 +126,7 @@ const About = props => (
         </Link>
         : React.lazy is the recommended solution for Code Splitting. It uses Suspense
         and it is maintained by React. If you are already using React.lazy and if
-        you are good with it, you don#&39;t need @loadable/component. If you feel
+        you are good with it, you don&#39;t need @loadable/component. If you feel
         limited or if you need SSR, then @loadable/component is the solution.
       </Text>
       <Text style={styles.paddingTop}>

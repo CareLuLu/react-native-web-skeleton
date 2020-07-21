@@ -6,13 +6,13 @@ import {
   Row,
   Text,
   Column,
-  NavLink,
   Image,
   ScrollView,
 } from 'react-native-web-ui-components';
 import resource from '../utils/resource';
 import getMenu from '../utils/getMenu';
 import Layout from './Layout';
+import NavLink from './NavLink';
 
 const styles = StyleSheet.create({
   background: {
