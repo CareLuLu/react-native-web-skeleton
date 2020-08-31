@@ -63,7 +63,7 @@
     "apollo-link-http": "1.5.17",
     "create-react-class": "15.6.3",
     "dotenv": "8.2.0",
-    "expo": "38.0.9",
+    "expo": "38.0.10",
     "expo-web-browser": "8.3.1",
     "graphql": "15.3.0",
     "history": "4.10.1",
