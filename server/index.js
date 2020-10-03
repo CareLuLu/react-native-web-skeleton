@@ -20,7 +20,19 @@ const isHttps = () => true;
 router.get('/(.*)', render());
 
 app.use(sslify({ resolver: isHttps }));
-app.use(helmet());
+
+// https://www.npmjs.com/package/koa-helmet
+app.use(helmet.dnsPrefetchControl());
+app.use(helmet.expectCt());
+app.use(helmet.frameguard());
+app.use(helmet.hidePoweredBy());
+app.use(helmet.hsts());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
+app.use(helmet.permittedCrossDomainPolicies());
+app.use(helmet.referrerPolicy());
+app.use(helmet.xssFilter());
+
 app.use(async (ctx, next) => {
   if (config.auth.username && config.auth.password) {
     await auth({
