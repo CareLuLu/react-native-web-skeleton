@@ -63,7 +63,7 @@ let redirect = ({ push, path }) => { // eslint-disable-line
   return Redirect;
 };
 if (!SSR_MODE) {
-  redirect = ({ push, path }) => {
+  redirect = ({ push, path }) => { // eslint-disable-line
     const Redirect = (props) => {
       const {
         user,
@@ -95,12 +95,12 @@ if (!SSR_MODE) {
 
 let uncacheable = noop; // eslint-disable-line
 if (!SSR_MODE) {
-  uncacheable = open;
+  uncacheable = open; // eslint-disable-line
 }
 
 let restrict = noop; // eslint-disable-line
 if (!SSR_MODE) {
-  restrict = (Component) => {
+  restrict = (Component) => { // eslint-disable-line
     const Renderer = (props) => {
       const {
         user,
