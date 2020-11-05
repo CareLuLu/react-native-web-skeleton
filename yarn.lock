@@ -2064,10 +2064,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@expo/configure-splash-screen@0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@expo/configure-splash-screen/-/configure-splash-screen-0.1.13.tgz#9f974146d716ffc03461e4d2deb7bfb22826e56a"
-  integrity sha512-1AYaHDJlAXfS7K/i2kI7U5+dELfKnFrXti97cIC5PkHOwEQVti8Uw1/KXO0+Pih7g8BNDvDPjHlMNDqn7AnBCA==
+"@expo/configure-splash-screen@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@expo/configure-splash-screen/-/configure-splash-screen-0.2.0.tgz#84f9f71363259f16fd0073636a198c750a3cdd7c"
+  integrity sha512-2RG0NOeXZAGKNJXVEEA9wukDsxjmMdDTclZP9FPb15r3+siWI/GZaC36IqoQ8/mw4wzX5Y+OvZ2cHhc0J8t+0A==
   dependencies:
     "@react-native-community/cli-platform-android" "^4.10.0"
     "@react-native-community/cli-platform-ios" "^4.10.0"
@@ -2076,6 +2076,7 @@
     core-js "^3.6.5"
     deep-equal "^2.0.3"
     fs-extra "^9.0.0"
+    lodash "^4.17.15"
     pngjs "^5.0.0"
     xcode "^3.0.0"
     xml-js "^1.6.11"
@@ -3178,10 +3179,10 @@
     "@typescript-eslint/types" "4.5.0"
     eslint-visitor-keys "^2.0.0"
 
-"@unimodules/core@~5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@unimodules/core/-/core-5.5.0.tgz#580aaa4887641c1af85e0ab9f8987a5d4424595c"
-  integrity sha512-i99Dw9Ie/8hSCn80hq6nKlklINdtOhhNqRf2BbF0xs03Ej/WYHsp6NaXReTifI5I7OP5djArEu2oYdZAFxFvbA==
+"@unimodules/core@~5.5.1":
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/@unimodules/core/-/core-5.5.1.tgz#82afe960568c58da62c76ea45ca77aa43a31ce13"
+  integrity sha512-4OADQJqQ52TsCzfK+xUGWjt3zZADYxRvBZe8JXrnx2qGMXhFFUUn2JMEZT3nDt4QwtM+rIp9BsrQCMIPlXCOHg==
   dependencies:
     compare-versions "^3.4.0"
 
@@ -7095,12 +7096,12 @@ expo-permissions@~9.3.0:
   resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-9.3.0.tgz#b90c7e9e411d306c1c7ba2bae18d5c53c201affd"
   integrity sha512-ylSJZVvEGJVFTKsFrUL2S6gCvFt+/o8TJ3xT4WaMjHe2/2Z7R8ng6NR47Kt54t7XBIV/SZ7DIY9uRiR7TPuNYA==
 
-expo-splash-screen@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/expo-splash-screen/-/expo-splash-screen-0.6.1.tgz#c333340169e2a855d18e2e52d5f5738cc2e0b9ad"
-  integrity sha512-m4cEGN/9TJr9G1xr7H5QJqvvAwKMrZPxSuWqp9ht/XfPsy3RD37Ao+384lohAHt6BKjIcYiDgxDDDJ1QDExdjg==
+expo-splash-screen@~0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/expo-splash-screen/-/expo-splash-screen-0.6.2.tgz#2be7fc28ad62549e870c69f1fe133ebe756c524f"
+  integrity sha512-Rvi+aiVDztFyLh5fYJYcZxVuQNDCy6ATSTfxuch5uVQ1jA9/vjVzUKG4iZCoChaSCnMV56aFftHBWSDNWPvLFQ==
   dependencies:
-    "@expo/configure-splash-screen" "0.1.13"
+    "@expo/configure-splash-screen" "0.2.0"
 
 expo-sqlite@~8.4.0:
   version "8.4.0"
@@ -7117,14 +7118,14 @@ expo-web-browser@8.5.0:
   dependencies:
     compare-urls "^2.0.0"
 
-expo@39.0.3:
-  version "39.0.3"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-39.0.3.tgz#55d10609b2df9b8d511acb4f3e72e4dc162e6b27"
-  integrity sha512-pbLlkq43XDViEQpzgIW8hEPRibwjSml1uZQ3imPpCDfjMGlq7J6+IIN7q4kd+Hp+W0J6w6INYPR0E/dxdEBkSw==
+expo@39.0.4:
+  version "39.0.4"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-39.0.4.tgz#320b7453ac055fc37c64942d5ba442f4e2781993"
+  integrity sha512-lyd7VSg0DG+I2CwWtOHwhmMwgANoqggqU1ooWRdO4KdWPYA8hWMMsLC2vBBBemKv3PPwxhl9hhzFxtjJ/MaR7g==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@expo/vector-icons" "^10.0.2"
-    "@unimodules/core" "~5.5.0"
+    "@unimodules/core" "~5.5.1"
     "@unimodules/react-native-adapter" "~5.6.0"
     babel-preset-expo "~8.3.0"
     badgin "^1.1.2"
@@ -7139,7 +7140,7 @@ expo@39.0.3:
     expo-linking "~1.0.4"
     expo-location "~9.0.0"
     expo-permissions "~9.3.0"
-    expo-splash-screen "^0.6.1"
+    expo-splash-screen "~0.6.2"
     expo-sqlite "~8.4.0"
     fbemitter "^2.1.1"
     invariant "^2.2.2"
