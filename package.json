@@ -40,7 +40,7 @@
     "react-app-rewired": "2.1.8",
     "react-native-dotenv": "0.2.0",
     "react-native-scripts": "2.0.1",
-    "react-scripts": "4.0.2",
+    "react-scripts": "4.0.3",
     "uglifycss": "0.0.29",
     "webpack-bundle-analyzer": "4.4.0"
   },
