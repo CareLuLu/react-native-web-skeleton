@@ -36,7 +36,7 @@
     "koa-sslify": "4.0.3",
     "koa-static": "5.0.0",
     "node-gzip": "1.1.2",
-    "pm2": "4.5.5",
+    "pm2": "4.5.6",
     "react-app-rewired": "2.1.8",
     "react-native-dotenv": "0.2.0",
     "react-native-scripts": "2.0.1",
