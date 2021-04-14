@@ -33,7 +33,7 @@
     "koa-compress": "5.0.1",
     "koa-helmet": "6.1.0",
     "koa-router": "10.0.0",
-    "koa-sslify": "4.0.3",
+    "koa-sslify": "5.0.0",
     "koa-static": "5.0.0",
     "node-gzip": "1.1.2",
     "pm2": "4.5.6",
