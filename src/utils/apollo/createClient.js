@@ -1,13 +1,15 @@
-import { ApolloClient } from '@apollo/client';
+import { ApolloClient, ApolloLink, HttpLink } from '@apollo/client';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
-import { createHttpLink } from 'apollo-link-http';
-import { NAME, GRAPHQL_URL } from '../../config';
+import { NetworkErrorLink, cacheFirstNetworkErrorLink } from 'apollo-link-network-error';
+import { GRAPHQL_URL } from '../../config';
 import storage from '../storage';
 import getPlatform from '../getPlatform';
 import { dasherize } from '../string';
 import { waitFor } from '../wait';
 
 /* eslint no-param-reassign: 0 */
+
+const cacheErrorRegex = /^Can't find field /i;
 
 const state = {
   client: null,
@@ -24,6 +26,7 @@ const customFetch = (ssrMode, ip, memoryCache) => {
         page,
         landingPage,
         firstLandingPage,
+        schoolId,
       ] = await Promise.all([
         storage.get('jwt'),
         storage.get('distinctId'),
@@ -32,42 +35,44 @@ const customFetch = (ssrMode, ip, memoryCache) => {
         storage.get('page'),
         storage.get('landingPage'),
         storage.get('firstLandingPage'),
+        storage.get('schoolId'),
       ]);
-      const appName = dasherize(NAME.toLowerCase());
-
       options.mode = 'cors';
       options.headers.Authorization = `Bearer ${jwt}`;
       if (distinctId) {
-        options.headers[`x-${appName}-f`] = distinctId;
+        options.headers['x-carelulu-f'] = distinctId;
+      }
+      if (schoolId) {
+        options.headers['x-carelulu-s'] = schoolId;
       }
       const parsedUtm = JSON.parse(utm || '{}');
       Object.keys(parsedUtm).forEach((key) => {
-        options.headers[`x-${appName}-${dasherize(key)}`] = parsedUtm[key];
+        options.headers[`x-carelulu-${dasherize(key)}`] = parsedUtm[key];
       });
       const parsedFirstUtm = JSON.parse(firstUtm || '{}');
       Object.keys(parsedFirstUtm).forEach((key) => {
-        options.headers[`x-${appName}-first-${dasherize(key)}`] = parsedFirstUtm[key];
+        options.headers[`x-carelulu-first-${dasherize(key)}`] = parsedFirstUtm[key];
       });
       if (page) {
-        options.headers[`x-${appName}-page`] = page;
+        options.headers['x-carelulu-page'] = page;
       }
       if (landingPage) {
-        options.headers[`x-${appName}-landing-page`] = landingPage;
+        options.headers['x-carelulu-landing-page'] = landingPage;
       }
       if (firstLandingPage) {
-        options.headers[`x-${appName}-first-landing-page`] = firstLandingPage;
+        options.headers['x-carelulu-first-landing-page'] = firstLandingPage;
       }
-      options.headers[`x-${appName}-platform`] = getPlatform();
+      options.headers['x-carelulu-platform'] = getPlatform();
       if (ip) {
         options.headers['x-forwarded-for'] = ip;
       }
       const response = await fetch(uri, options);
       const promises = [];
-      const responseDistinctId = response.headers.get(`x-${appName}-f`);
+      const responseDistinctId = response.headers.get('x-carelulu-f');
       if (responseDistinctId) {
         promises.push(storage.set('distinctId', responseDistinctId));
       }
-      const responseJwt = response.headers.get(`x-${appName}-b`);
+      const responseJwt = response.headers.get('x-carelulu-b');
       if (responseJwt) {
         promises.push(storage.set('jwt', responseJwt));
       }
@@ -81,6 +86,7 @@ const customFetch = (ssrMode, ip, memoryCache) => {
     };
   }
   return async (uri, options) => {
+    options.headers['x-forwarded-for'] = ip;
     const response = await fetch(uri, options);
     const cacheControl = response.headers.get('cache-control');
     if (cacheControl) {
@@ -113,19 +119,35 @@ const createClient = (ssrMode, cache = {}, ip) => {
       },
     },
   });
+
   const memoryCache = new InMemoryCache({ fragmentMatcher }).restore(cache);
+  const errorLink = new NetworkErrorLink(({ networkError }) => {
+    if (cacheErrorRegex.test(networkError.message)) {
+      throw new Error('Network error. Please check your internet connection.');
+    }
+    throw networkError;
+  });
+  const errorIgnoreLink = cacheFirstNetworkErrorLink(memoryCache);
+  const httpLink = new HttpLink({
+    uri: GRAPHQL_URL,
+    fetch: customFetch(ssrMode, ip, memoryCache, state),
+  });
+
+  const link = ApolloLink.from([
+    errorLink,
+    errorIgnoreLink,
+    httpLink,
+  ]);
+
   state.client = new ApolloClient({
     ssrMode,
+    link,
     cache: memoryCache,
-    link: createHttpLink({
-      uri: GRAPHQL_URL,
-      fetch: customFetch(ssrMode, ip, memoryCache, state),
-    }),
     errorPolicy: 'all',
     shouldBatch: !ssrMode,
     connectToDevTools: true,
   });
-  state.client.getCacheData = () => state.client.store.cache.data.data;
+  state.client.getCacheData = () => state.client.cache.data.data;
 
   const { clearStore } = state.client;
   state.client.clearStore = async (...args) => {
@@ -141,6 +163,14 @@ const createClient = (ssrMode, cache = {}, ip) => {
     const result = await clearStore.call(state.client, ...args);
     return result;
   };
+
+  const { query } = state.client;
+  state.client.query = options => query.call(state.client, {
+    ...options,
+    context: {
+      __skipErrorAccordingCache__: options.fetchPolicy !== 'network-only',
+    },
+  });
 
   return state.client;
 };
