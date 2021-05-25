@@ -4,6 +4,10 @@
   ],
   "semanticCommits": true,
   "automerge": true,
+  "node": {
+    "supportPolicy": "current",
+    "ignoreUnstable": false
+  },
   "packageRules": [
     {
       "packagePatterns": ["react-native"],
