@@ -1,5 +1,9 @@
-import { ApolloClient, ApolloLink, HttpLink } from '@apollo/client';
-import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
+import {
+  ApolloClient,
+  ApolloLink,
+  HttpLink,
+  InMemoryCache,
+} from '@apollo/client';
 import { NetworkErrorLink, cacheFirstNetworkErrorLink } from 'apollo-link-network-error';
 import { GRAPHQL_URL } from '../../config';
 import storage from '../storage';
@@ -105,22 +109,12 @@ const createClient = (ssrMode, cache = {}, ip) => {
   if (!ssrMode && state.client) {
     return state.client;
   }
-  const fragmentMatcher = new IntrospectionFragmentMatcher({
-    introspectionQueryResultData: {
-      __schema: {
-        types: [{
-          kind: 'INTERFACE',
-          name: 'paymentMethod',
-          possibleTypes: [
-            { name: 'bankAccount' },
-            { name: 'card' },
-          ],
-        }],
-      },
-    },
-  });
 
-  const memoryCache = new InMemoryCache({ fragmentMatcher }).restore(cache);
+  const memoryCache = new InMemoryCache({
+    possibleTypes: {
+      paymentMethod: ['bankAccount', 'card'],
+    },
+  }).restore(cache);
   const errorLink = new NetworkErrorLink(({ networkError }) => {
     if (cacheErrorRegex.test(networkError.message)) {
       throw new Error('Network error. Please check your internet connection.');
