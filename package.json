@@ -29,7 +29,7 @@
     "glob": "7.1.7",
     "koa": "2.13.1",
     "koa-basic-auth": "4.0.0",
-    "koa-compress": "5.0.1",
+    "koa-compress": "5.1.0",
     "koa-helmet": "6.1.0",
     "koa-router": "10.0.0",
     "koa-sslify": "5.0.0",
