@@ -62,7 +62,7 @@
     "apollo-link-network-error": "0.0.4",
     "create-react-class": "15.7.0",
     "dotenv": "10.0.0",
-    "expo": "42.0.3",
+    "expo": "42.0.4",
     "expo-web-browser": "9.2.0",
     "graphql": "15.6.0",
     "history": "4.10.1",
