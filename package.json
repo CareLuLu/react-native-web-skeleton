@@ -84,7 +84,7 @@
     "react-router-dom": "6.2.1",
     "react-router-native": "6.2.1",
     "resize-observer-polyfill": "1.5.1",
-    "underscore.string": "3.3.5"
+    "underscore.string": "3.3.6"
   },
   "browserslist": [
     ">1%",
