@@ -8132,10 +8132,10 @@ eslint-plugin-jsx-a11y@6.5.1, eslint-plugin-jsx-a11y@^6.5.1:
     language-tags "^1.0.5"
     minimatch "^3.0.4"
 
-eslint-plugin-react-hooks@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.4.0.tgz#71c39e528764c848d8253e1aa2c7024ed505f6c4"
-  integrity sha512-U3RVIfdzJaeKDQKEJbz5p3NW8/L80PCATJAfuojwbaEL+gBjfGdhUcGde+WGUW46Q5sr/NgxevsIiDtNXrvZaQ==
+eslint-plugin-react-hooks@4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.5.0.tgz#5f762dfedf8b2cf431c689f533c9d3fa5dcf25ad"
+  integrity sha512-8k1gRt7D7h03kd+SAAlzXkQwWK22BnK6GKZG+FJA6BAGy22CFvl8kCIXKpVux0cCxMWDQUPqSok0LKaZ0aOcCw==
 
 eslint-plugin-react-hooks@^4.3.0:
   version "4.3.0"
@@ -13861,15 +13861,15 @@ react-app-rewired@2.2.1:
   dependencies:
     semver "^5.6.0"
 
-react-art@18.0.0:
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/react-art/-/react-art-18.0.0.tgz#d3b8be43d932952311c3e7969aa3522ff3ea0e2a"
-  integrity sha512-r7+u0V103TLBPAEEr97iMBaiOkmBKN2V6RsQKy8NjKX5OEK6IpOapO2CMCNTiy+2sbQT9mxFPLi9CPA+o+9o4A==
+react-art@18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/react-art/-/react-art-18.1.0.tgz#3a4493e748752cdf5821732294c7927fdaca1a19"
+  integrity sha512-ykR0Wk3jOCKYRv9Ey0s8aXfIEKGbUaHm1rKteP0W3LW4g7xN9Lx3c/gRQkr5Gj1W6r4TlI9ioUh3GB3ZfKdJgA==
   dependencies:
     art "^0.10.1"
     create-react-class "^15.6.2"
     loose-envify "^1.1.0"
-    scheduler "^0.21.0"
+    scheduler "^0.22.0"
 
 react-datepicker@^3.0.0:
   version "3.8.0"
@@ -13920,13 +13920,13 @@ react-devtools-core@^4.6.0:
     shell-quote "^1.6.1"
     ws "^7"
 
-react-dom@18.0.0:
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.0.0.tgz#26b88534f8f1dbb80853e1eabe752f24100d8023"
-  integrity sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==
+react-dom@18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.1.0.tgz#7f6dd84b706408adde05e1df575b3a024d7e8a2f"
+  integrity sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w==
   dependencies:
     loose-envify "^1.1.0"
-    scheduler "^0.21.0"
+    scheduler "^0.22.0"
 
 react-draggable@^4.3.1:
   version "4.4.3"
@@ -14264,10 +14264,10 @@ react-timer-mixin@^0.13.3, react-timer-mixin@^0.13.4:
   resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
   integrity sha512-4+ow23tp/Tv7hBM5Az5/Be/eKKF7DIvJ09voz5LyHGQaqqz9WV8YMs31eFvcYQs7d451LSg7kDJV70XYN/Ug/Q==
 
-react@18.0.0:
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.0.0.tgz#b468736d1f4a5891f38585ba8e8fb29f91c3cb96"
-  integrity sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A==
+react@18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-18.1.0.tgz#6f8620382decb17fdc5cc223a115e2adbf104890"
+  integrity sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==
   dependencies:
     loose-envify "^1.1.0"
 
@@ -14748,10 +14748,10 @@ scheduler@0.19.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.21.0.tgz#6fd2532ff5a6d877b6edb12f00d8ab7e8f308820"
-  integrity sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==
+scheduler@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.22.0.tgz#83a5d63594edf074add9a7198b1bae76c3db01b8"
+  integrity sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==
   dependencies:
     loose-envify "^1.1.0"
 
