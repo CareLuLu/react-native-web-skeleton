@@ -64,7 +64,7 @@
     "dotenv": "16.0.0",
     "expo": "45.0.2",
     "expo-web-browser": "10.2.0",
-    "graphql": "16.4.0",
+    "graphql": "16.5.0",
     "history": "5.3.0",
     "js-cookie": "3.0.1",
     "lodash": "4.17.21",
