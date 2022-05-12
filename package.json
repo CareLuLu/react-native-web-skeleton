@@ -26,7 +26,7 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
     "esx": "2.3.3",
-    "glob": "8.0.1",
+    "glob": "8.0.2",
     "koa": "2.13.4",
     "koa-basic-auth": "4.0.0",
     "koa-compress": "5.1.0",
