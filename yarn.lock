@@ -15325,10 +15325,10 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
-query-string@8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-8.0.1.tgz#08576c3abd5d0a6551dea58b3d255cbb8a3cefc8"
-  integrity sha512-8SDmV7tHy3qJeb8TK07LQ/4GDp8tGDgNjAC4de/ma/+QfwK+yXO9lQaAnGLmHrd8LUI2z5WNnCE8DURkYUhzgw==
+query-string@8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-8.0.2.tgz#500007fca8d244478a1e264e5bdd561c34055c18"
+  integrity sha512-clIYj8NRVQzKAfyESeANUl+YHHVsl+QzGta8ndvqeGaJK/2RMDHiEI7iuu3erIWVdK27aePhuXUHCVojWT+Tjw==
   dependencies:
     decode-uri-component "^0.2.2"
     filter-obj "^5.1.0"
