@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.7.5",
-    "@loadable/component": "5.15.2",
+    "@loadable/component": "5.15.3",
     "apollo-link-http": "1.5.17",
     "apollo-link-network-error": "0.0.4",
     "create-react-class": "15.7.0",
