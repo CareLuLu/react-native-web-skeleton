@@ -9624,10 +9624,10 @@ expo-web-browser@12.1.1:
     compare-urls "^2.0.0"
     url "^0.11.0"
 
-expo@48.0.12:
-  version "48.0.12"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-48.0.12.tgz#faef549d70b3e7a8928e74d27c71e41469723645"
-  integrity sha512-DjHYxIHOEvsM+yd2JFnRXtogTZKYWVhyT76Q8CKz91cdM7coXPtTAC23dj9nHx6aKP8RmHnpr902lY5uYPP83A==
+expo@48.0.13:
+  version "48.0.13"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-48.0.13.tgz#694328307908d18337be9dd099ed8041b76a4558"
+  integrity sha512-74dM71Lkb9NM8495IvyoAunX7S1q024pLauM9QAdNd+y2ffSquVexfXWergRjqw17+EzeKyOZGKxqSfrgJ4U7Q==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/cli" "0.7.0"
