@@ -10,7 +10,7 @@
     "@babel/plugin-proposal-decorators": "7.22.7",
     "@babel/plugin-transform-runtime": "7.22.7",
     "@babel/register": "7.22.5",
-    "@loadable/babel-plugin": "5.15.3",
+    "@loadable/babel-plugin": "5.16.0",
     "@loadable/server": "5.15.3",
     "@loadable/webpack-plugin": "5.15.2",
     "babel-plugin-import-inspector": "2.0.0",

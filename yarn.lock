@@ -4926,10 +4926,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@loadable/babel-plugin@5.15.3":
-  version "5.15.3"
-  resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.15.3.tgz#d36ef4d4dc41bf4dca9a8b7c8e695e5ea43259db"
-  integrity sha512-kwEsPxCk8vnwbTfbA4lHqT5t0u0czCQTnCcmOaTjxT5lCn7yZCBTBa9D7lHs+MLM2WyPsZlee3Qh0TTkMMi5jg==
+"@loadable/babel-plugin@5.16.0":
+  version "5.16.0"
+  resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.16.0.tgz#904ab394bd881be844b498fa2c34a4ceba91bc74"
+  integrity sha512-AnjmxUu6NDeJEOncBbW/KpyOmclykWQOygUyTVezBy5L4KHQUR/T8fkFrplXeRxBEU6Jac51UeKRPLmRSEQUqg==
   dependencies:
     "@babel/plugin-syntax-dynamic-import" "^7.7.4"
 
