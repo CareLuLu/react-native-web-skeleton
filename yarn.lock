@@ -9820,10 +9820,10 @@ expo-modules-autolinking@1.5.0:
     find-up "^5.0.0"
     fs-extra "^9.1.0"
 
-expo-modules-core@1.5.6:
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.5.6.tgz#32476b7f3835b65535281a56f2321cf291568f51"
-  integrity sha512-3OsWO8p0BSX7qgkYPnl+B/fz5rCJt1rU3nsa1fi1p3Oy44bvvdb2FVejTBIb87I41i0Rcj7vn2uG1KWuK1TA1Q==
+expo-modules-core@1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.5.7.tgz#c1e432af590eacc9d8fcb9bdf28abf1db55a54cf"
+  integrity sha512-qdSP/yExeDya2lySJEhP+1DRSyayZ6IlXAT0hA3wao1AUtoz09yM257TUMS05ASihopQhLn520Q6yAwrezDsxA==
   dependencies:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
@@ -9841,10 +9841,10 @@ expo-web-browser@12.3.2:
     compare-urls "^2.0.0"
     url "^0.11.0"
 
-expo@49.0.2:
-  version "49.0.2"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-49.0.2.tgz#4d069999867bcb2c88020ee3471ca625e46a01df"
-  integrity sha512-fpUz1vegrd1lPzS+A+HbkOF5Lt+tIq6vKiSmw6sW89JMBx5rpKTnTnVVvDuMOG1pnXxZlmQtYTrw0C6H9zcTNw==
+expo@49.0.3:
+  version "49.0.3"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-49.0.3.tgz#0fce00c9fa864d8253f45dac6922b316e93ddd25"
+  integrity sha512-rqoNgl5t1ZExv94y1Z/zzbw8+Aa+FFTkfF9MrIaeAk+qB8oXORSlqUUylD4GU80l6wADtjN+ayefxECum8194A==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/cli" "0.10.10"
@@ -9859,7 +9859,7 @@ expo@49.0.2:
     expo-font "~11.4.0"
     expo-keep-awake "~12.3.0"
     expo-modules-autolinking "1.5.0"
-    expo-modules-core "1.5.6"
+    expo-modules-core "1.5.7"
     fbemitter "^3.0.0"
     invariant "^2.2.4"
     md5-file "^3.2.3"
