@@ -19,7 +19,7 @@
     jsonpointer "^5.0.0"
     leven "^3.1.0"
 
-"@apollo/client@3.8.1":
+"@apollo/client@3.8.1", "@apollo/client@^3.3.21":
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.8.1.tgz#a1e3045a5fb276c08e38f7b5f930551d79741257"
   integrity sha512-JGGj/9bdoLEqzatRikDeN8etseY5qeFAY0vSAx/Pd0ePNsaflKzHx6V2NZ0NsGkInq+9IXXX3RLVDf0EotizMA==
@@ -6283,14 +6283,14 @@ apollo-link-http@1.5.17:
     apollo-link-http-common "^0.2.16"
     tslib "^1.9.3"
 
-apollo-link-network-error@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/apollo-link-network-error/-/apollo-link-network-error-0.0.4.tgz#4d002f468514555942394e12e5a5f41aac213acd"
-  integrity sha512-4kkiBm/bb2yZM6xHhl1yt4RaIjooXrR5AWO9BUl8jt2HnjlGmDg8MsyDpluejEXJsYJMR7DO4QN83P9dt27aQg==
+apollo-link-network-error@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/apollo-link-network-error/-/apollo-link-network-error-0.0.5.tgz#ddd42c694c43c8a0cdbab96fd7aac241db5497c6"
+  integrity sha512-4G2nKno3XPy7t080/oMtO/jb3N79+D/VulntnLKKBDvLetiNw7lZH4+r7g0FpqJw2uOA1ih4GkS+aZWrx2bR7A==
   dependencies:
-    apollo-link "^1.2.13"
+    "@apollo/client" "^3.3.21"
 
-apollo-link@^1.2.13, apollo-link@^1.2.14:
+apollo-link@^1.2.14:
   version "1.2.14"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.14.tgz#3feda4b47f9ebba7f4160bef8b977ba725b684d9"
   integrity sha512-p67CMEFP7kOG1JZ0ZkYZwRDa369w5PIjtMjvrQd/HnIV8FRsHRqLqK+oAZQnFa1DDdZtOtHTi+aMIW6EatC2jg==

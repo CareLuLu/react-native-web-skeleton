@@ -59,7 +59,7 @@
     "@apollo/client": "3.8.1",
     "@loadable/component": "5.15.3",
     "apollo-link-http": "1.5.17",
-    "apollo-link-network-error": "0.0.4",
+    "apollo-link-network-error": "0.0.5",
     "create-react-class": "15.7.0",
     "dotenv": "16.3.1",
     "expo": "49.0.7",
